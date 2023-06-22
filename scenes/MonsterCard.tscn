@@ -1,0 +1,291 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonhosek3223j"]
+
+[ext_resource type="Script" path="res://scripts/MonsterCard.gd" id="1_polke"]
+[ext_resource type="Texture2D" uid="uid://84g6odob8ov2" path="res://graphics/cardborders/Back_Texture.png" id="2_3baf6"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 250.0
+offset_bottom = 350.0
+pivot_offset = Vector2(125, 175)
+script = ExtResource("1_polke")
+
+[node name="CardBG" type="Sprite2D" parent="."]
+texture = ExtResource("2_3baf6")
+centered = false
+
+[node name="CardBorder" type="ReferenceRect" parent="."]
+layout_mode = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TopGap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Name2" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Name2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name2"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar/Name2/CenterContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Name" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Name"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar/Name/CenterContainer"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HPName" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/HPName"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/HPName"]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="Bars/TopBar/HPName/CenterContainer"]
+layout_mode = 2
+text = "HP:"
+
+[node name="HP" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/HP"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/HP"]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="Bars/TopBar/HP/CenterContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="TopBar2" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="NatureName" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/NatureName"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/NatureName"]
+layout_mode = 2
+
+[node name="Nature" type="Label" parent="Bars/TopBar2/NatureName/CenterContainer"]
+layout_mode = 2
+text = "Nature:"
+
+[node name="Nature" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Nature"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Nature"]
+layout_mode = 2
+
+[node name="Nature" type="Label" parent="Bars/TopBar2/Nature/CenterContainer"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Terrain2" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Terrain2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Terrain2"]
+layout_mode = 2
+
+[node name="Terrain" type="Label" parent="Bars/TopBar2/Terrain2/CenterContainer"]
+layout_mode = 2
+text = "Terrain:"
+
+[node name="Terrain" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Terrain"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Terrain"]
+layout_mode = 2
+
+[node name="Terrain" type="Label" parent="Bars/TopBar2/Terrain/CenterContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardImg" type="TextureRect" parent="Bars/MidGap"]
+clip_contents = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="BottomBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Region2" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/Region2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Region2"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/BottomBar/Region2/CenterContainer"]
+layout_mode = 2
+text = "Region:"
+
+[node name="Region" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/Region"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Region"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/BottomBar/Region/CenterContainer"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Nature" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/Nature"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Nature"]
+layout_mode = 2
+
+[node name="Nature" type="Label" parent="Bars/BottomBar/Nature/CenterContainer"]
+layout_mode = 2
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="BottomBar2" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="MainBreed2" type="MarginContainer" parent="Bars/BottomBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/MainBreed2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/MainBreed2"]
+layout_mode = 2
+
+[node name="MainBreed" type="Label" parent="Bars/BottomBar2/MainBreed2/CenterContainer"]
+layout_mode = 2
+text = "Main:"
+
+[node name="MainBreed" type="MarginContainer" parent="Bars/BottomBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/MainBreed"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/MainBreed"]
+layout_mode = 2
+
+[node name="MainBreed" type="Label" parent="Bars/BottomBar2/MainBreed/CenterContainer"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars/BottomBar2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubBreed2" type="MarginContainer" parent="Bars/BottomBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/SubBreed2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/SubBreed2"]
+layout_mode = 2
+
+[node name="SubBreed" type="Label" parent="Bars/BottomBar2/SubBreed2/CenterContainer"]
+layout_mode = 2
+text = "Sub:"
+
+[node name="SubBreed" type="MarginContainer" parent="Bars/BottomBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/SubBreed"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/SubBreed"]
+layout_mode = 2
+
+[node name="SubBreed" type="Label" parent="Bars/BottomBar2/SubBreed/CenterContainer"]
+layout_mode = 2
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="BottomGap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2

@@ -1,0 +1,200 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy247gx6f0vf1"]
+
+[ext_resource type="Script" path="res://scripts/SkillCard.gd" id="1_knj5h"]
+[ext_resource type="Texture2D" uid="uid://84g6odob8ov2" path="res://graphics/cardborders/Back_Texture.png" id="2_j6weo"]
+[ext_resource type="Texture2D" uid="uid://f24gf6lheqlc" path="res://graphics/cardborders/BackgroundImage.png" id="2_x8u55"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6k7vv"]
+line_spacing = 0.0
+font_color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -350.0
+offset_right = 127.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(125, 175)
+script = ExtResource("1_knj5h")
+
+[node name="CardBG" type="Sprite2D" parent="."]
+texture = ExtResource("2_j6weo")
+centered = false
+
+[node name="CardBorder" type="ReferenceRect" parent="."]
+layout_mode = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TopGap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Name" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Name"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar/Name/CenterContainer"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Type" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Type"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Type"]
+layout_mode = 2
+
+[node name="Type" type="Label" parent="Bars/TopBar/Type/CenterContainer"]
+layout_mode = 2
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="TopBar2" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Name" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Name"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Name"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar2/Name/CenterContainer"]
+layout_mode = 2
+text = "DMG:"
+
+[node name="MidGap" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Damage" type="Label" parent="Bars/TopBar2/MidGap"]
+layout_mode = 2
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Name2" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Name2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Name2"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar2/Name2/CenterContainer"]
+layout_mode = 2
+text = "COST:"
+
+[node name="MidGap2" type="MarginContainer" parent="Bars/TopBar2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cost" type="Label" parent="Bars/TopBar2/MidGap2"]
+layout_mode = 2
+
+[node name="MidGap" type="MarginContainer" parent="Bars"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardImg" type="TextureRect" parent="Bars/MidGap"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="BottomBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="EffectTitle" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/EffectTitle"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/EffectTitle"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/BottomBar/EffectTitle/CenterContainer"]
+layout_mode = 2
+text = "Added Effect:"
+
+[node name="MidGap" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="BottomBar2" type="HBoxContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Effect" type="MarginContainer" parent="Bars/BottomBar2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/Effect"]
+layout_mode = 2
+texture = ExtResource("2_x8u55")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/Effect"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/BottomBar2/Effect/CenterContainer"]
+custom_minimum_size = Vector2(196, 46)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_6k7vv")
+autowrap_mode = 3
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="BottomGap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
