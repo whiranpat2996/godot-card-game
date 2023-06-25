@@ -7,12 +7,14 @@
 [ext_resource type="Script" path="res://scripts/DeckDraw.gd" id="5_4504s"]
 
 [node name="playarea" type="Control"]
+clip_children = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_45jgt")
 
 [node name="BG" type="TextureRect" parent="."]
@@ -20,34 +22,54 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -483.0
-offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 texture = ExtResource("1_8i0yy")
 
-[node name="Cards" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 350)
-layout_direction = 2
+[node name="CardSetup" type="VBoxContainer" parent="."]
+clip_children = 1
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -200.0
 grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
+grow_vertical = 2
+
+[node name="OpponentCards" type="HBoxContainer" parent="CardSetup"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OpponentMonsters" type="HBoxContainer" parent="CardSetup"]
+clip_children = 2
+layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 alignment = 1
 
-[node name="Deck" type="Node2D" parent="."]
-position = Vector2(967, 160)
+[node name="PlayerMonsters" type="HBoxContainer" parent="CardSetup"]
+clip_children = 2
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="PlayerCards" type="HBoxContainer" parent="CardSetup"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="PlayerDeck" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(35, 316)
 metadata/_edit_group_ = true
 
-[node name="DeckDraw" type="TextureButton" parent="Deck"]
+[node name="DeckDraw" type="TextureButton" parent="PlayerDeck"]
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 39.0
@@ -57,3 +79,16 @@ texture_pressed = ExtResource("3_ljg36")
 texture_hover = ExtResource("3_ljg36")
 texture_disabled = ExtResource("4_sf4yq")
 script = ExtResource("5_4504s")
+
+[node name="Label" type="Label" parent="PlayerDeck"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Draw"
+
+[node name="DeckSize" type="Label" parent="PlayerDeck"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0

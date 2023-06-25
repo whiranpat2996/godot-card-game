@@ -3,23 +3,34 @@
 [ext_resource type="Script" path="res://scripts/MonsterCard.gd" id="1_polke"]
 [ext_resource type="Texture2D" uid="uid://84g6odob8ov2" path="res://graphics/cardborders/Back_Texture.png" id="2_3baf6"]
 
-[node name="MarginContainer" type="MarginContainer"]
-offset_right = 250.0
-offset_bottom = 350.0
+[node name="MonsterCard" type="MarginContainer"]
+offset_right = 130.0
+offset_bottom = 175.0
 pivot_offset = Vector2(125, 175)
+mouse_filter = 0
 script = ExtResource("1_polke")
 
 [node name="CardBG" type="Sprite2D" parent="."]
+scale = Vector2(3.25, 3.125)
 texture = ExtResource("2_3baf6")
 centered = false
 
+[node name="CardBorder2" type="ReferenceRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
 [node name="CardBorder" type="ReferenceRect" parent="."]
+visible = false
 layout_mode = 2
 border_color = Color(0, 0, 0, 1)
 border_width = 5.0
 editor_only = false
 
 [node name="Bars" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="TopGap" type="MarginContainer" parent="Bars"]
@@ -289,3 +300,6 @@ layout_mode = 2
 [node name="BottomGap" type="MarginContainer" parent="Bars"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

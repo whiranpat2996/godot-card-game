@@ -1,38 +1,55 @@
 extends Control
 
-const CardSize = Vector2(125, 175)
+const CardSize = Vector2(50, 100)
 var monster = load("res://scenes/MonsterCard.tscn")
 var skill = load("res://scenes/SkillCard.tscn")
 var hand = load("res://scripts/playerhand.gd")
 
 var CardSelected = []
-var DeckSize = hand.CardList.size()
-
-#var centerCardOval = get_viewport_rect().size * Vector2(0.5, 1)
-#var horRad = get_viewport_rect().size.x*0.45
-#var vertRad = get_viewport_rect().size.y*0.4
-#var angle = deg_to_rad(90) - 0.6
-#var OvalAngleVector = Vector2()
+var monSelect = hand.monList.size()
+var CardSelect = hand.CardList.size()
+var DeckSize = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$PlayerDeck/DeckSize.text = str(DeckSize)
+	populatePlayerField("Golem")
+	populatePlayerField("Naga")
+	populatePlayerField("Pixie")
+	populateOpponentField("Pixie")
+	populateOpponentField("Golem")
+	populateOpponentField("Naga")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
+func populateOpponentField(monsterName):
+	var new_monster = monster.instantiate()
+	CardSelected = randi() % monSelect
+	new_monster.CardName = monsterName
+	new_monster.size.x = 1
+	new_monster.size.y = 1
+	$CardSetup/OpponentMonsters.add_child(new_monster)
+
+func populatePlayerField(monsterName):
+	var new_monster = monster.instantiate()
+	CardSelected = randi() % monSelect
+	new_monster.CardName = monsterName
+	new_monster.size.x = 1
+	new_monster.size.y = 1
+	$CardSetup/PlayerMonsters.add_child(new_monster)
+
 func drawCard():
-		var new_card = skill.instantiate()
-		CardSelected = randi() % DeckSize
-		new_card.CardName = hand.CardList[CardSelected]
-#		new_card.position = get_global_mouse_position()
-#		OvalAngleVector = Vector2(horRad * cos(angle), (-vertRad) * sin(angle))
-#		new_card.position = centerCardOval + OvalAngleVector - new_card.size/2
-#		new_card.scale = CardSize/new_card.size
-		$Cards.add_child(new_card)
-		hand.CardList.erase(hand.CardList[CardSelected])
-#		angle += 0.3
+		var new_skill = skill.instantiate()
+		CardSelected = randi() % CardSelect
+		new_skill.CardName = hand.CardList[CardSelected]
+		new_skill.size.x = 0.1
+		new_skill.size.y = 0.1
+		new_skill.loadCard()
+		$CardSetup/PlayerCards.add_child(new_skill)
+		hand.CardList.pop_front()
 		DeckSize -= 1
+		$PlayerDeck/DeckSize.text = str(DeckSize)
 		return DeckSize

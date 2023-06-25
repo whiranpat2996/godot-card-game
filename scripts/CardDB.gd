@@ -21,12 +21,12 @@ var MONDATA = {
 		"Nature": "0"
 		},
 	"Pixie":{
-		"Life": 9,
-		"Terrain": "G",
-		"Region": "Forest",
-		"MainBreed": "Golem",
-		"SubBreed": "Golem",
-		"Nature": "0"
+		"Life": 6,
+		"Terrain": "A",
+		"Region": "Desert",
+		"MainBreed": "Pixie",
+		"SubBreed": "Pixie",
+		"Nature": "-1"
 	}
 }
 

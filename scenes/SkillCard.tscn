@@ -8,31 +8,31 @@
 line_spacing = 0.0
 font_color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -127.0
-offset_top = -350.0
-offset_right = 127.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="SkillCard" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 56.0
 pivot_offset = Vector2(125, 175)
+mouse_filter = 0
 script = ExtResource("1_knj5h")
 
 [node name="CardBG" type="Sprite2D" parent="."]
 texture = ExtResource("2_j6weo")
 centered = false
 
+[node name="CardBorder2" type="ReferenceRect" parent="."]
+layout_mode = 2
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
 [node name="CardBorder" type="ReferenceRect" parent="."]
+visible = false
 layout_mode = 2
 border_color = Color(0, 0, 0, 1)
 border_width = 5.0
 editor_only = false
 
 [node name="Bars" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="TopGap" type="MarginContainer" parent="Bars"]
@@ -198,3 +198,6 @@ layout_mode = 2
 [node name="BottomGap" type="MarginContainer" parent="Bars"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
