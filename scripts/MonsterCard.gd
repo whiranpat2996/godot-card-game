@@ -1,10 +1,13 @@
 extends MarginContainer
 
-var CardName = "Pixie"
+var CardName = "Naga"
+var backup
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	loadCard()
+	backup = $Bars.duplicate()
+	remove_child($Bars)
 	
 func loadCard():
 	if CardName in CardDB.MONDATA:
@@ -33,19 +36,20 @@ func enlargeCard():
 	var CardSize = Vector2(260, 350)
 	size.x = 260
 	size.y = 350
-	$CardBG.scale = CardSize
-	$CardBorder.visible = true
-	$CardBorder2.visible = false
-	$Bars.visible = true
-	
+	$CardBG.scale = CardSize/$CardBG.texture.get_size()
+	$CardBorder.show()
+	$CardBorder2.hide()
+	add_child(backup)
+	backup.show()
+
 func shrinkCard():
 	var CardSize = Vector2(130, 175)
 	size.x = 130
 	size.y = 175
-	$CardBG.scale = CardSize
-	$CardBorder.visible = false
-	$CardBorder2.visible = true
-	$Bars.visible = false
+	$CardBG.scale = CardSize/$CardBG.texture.get_size()
+	$CardBorder.hide()
+	$CardBorder2.show()
+	remove_child(backup)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

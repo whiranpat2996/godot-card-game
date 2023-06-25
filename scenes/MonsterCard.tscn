@@ -16,6 +16,7 @@ texture = ExtResource("2_3baf6")
 centered = false
 
 [node name="CardBorder2" type="ReferenceRect" parent="."]
+clip_children = 2
 layout_mode = 2
 mouse_filter = 2
 border_color = Color(0, 0, 0, 1)
