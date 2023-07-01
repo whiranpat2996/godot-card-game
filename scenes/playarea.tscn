@@ -39,29 +39,34 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OpponentCards" type="HBoxContainer" parent="CardSetup"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 mouse_filter = 2
 
 [node name="OpponentMonsters" type="HBoxContainer" parent="CardSetup"]
 clip_children = 2
+z_index = 2
+custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
-size_flags_vertical = 3
 mouse_filter = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PlayerMonsters" type="HBoxContainer" parent="CardSetup"]
 clip_children = 2
+z_index = 1
+custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
-size_flags_vertical = 3
 mouse_filter = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PlayerCards" type="HBoxContainer" parent="CardSetup"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PlayerDeck" type="Node2D" parent="."]

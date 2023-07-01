@@ -1,12 +1,16 @@
 extends MarginContainer
 
-var CardName = "Help"
+var CardName = "Chop"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	loadCard()
 
 func loadCard():
+	var CardSize = Vector2(130, 175)
+	size.x = 130
+	size.y = 175
+	$CardBG.scale = CardSize/$CardBG.texture.get_size()
 	if CardName in CardDB.SKILLDATA:
 		var CardInfo = CardDB.SKILLDATA[CardName]
 		var CardImg = str("res://graphics/", CardInfo.CardType,"/",CardName.to_lower(),".png")
@@ -25,20 +29,22 @@ func loadCard():
 		$Bars/BottomBar2/Effect/CenterContainer/Name.text = "NO EFFECT"
 		
 func enlargeCard():
+	$Bars.show()
 	var CardSize = Vector2(260, 350)
 	size.x = 260
 	size.y = 350
 	$CardBG.scale = CardSize/$CardBG.texture.get_size()
-	$CardBorder.visible = true
-	$Bars.visible = true
-	
+	$CardBorder.show()
+	$CardBorder2.hide()
+
 func shrinkCard():
-	var CardSize = Vector2(40, 56)
-	size.x = 40
-	size.y = 56
+	$Bars.hide()
+	var CardSize = Vector2(130, 175)
+	size.x = 130
+	size.y = 175
 	$CardBG.scale = CardSize/$CardBG.texture.get_size()
-	$CardBorder.visible = false
-	$Bars.visible = false
+	$CardBorder.hide()
+	$CardBorder2.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

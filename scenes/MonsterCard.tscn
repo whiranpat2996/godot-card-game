@@ -7,27 +7,38 @@
 offset_right = 130.0
 offset_bottom = 175.0
 pivot_offset = Vector2(125, 175)
-mouse_filter = 0
 script = ExtResource("1_polke")
 
 [node name="CardBG" type="Sprite2D" parent="."]
-scale = Vector2(3.25, 3.125)
 texture = ExtResource("2_3baf6")
 centered = false
 
-[node name="CardBorder2" type="ReferenceRect" parent="."]
-clip_children = 2
-layout_mode = 2
-mouse_filter = 2
-border_color = Color(0, 0, 0, 1)
-border_width = 2.0
-editor_only = false
+[node name="HP" type="Label" parent="CardBG"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
 
 [node name="CardBorder" type="ReferenceRect" parent="."]
 visible = false
 layout_mode = 2
 border_color = Color(0, 0, 0, 1)
 border_width = 5.0
+editor_only = false
+
+[node name="CardBorder2" type="ReferenceRect" parent="."]
+clip_children = 2
+custom_minimum_size = Vector2(130, 175)
+layout_mode = 2
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
 editor_only = false
 
 [node name="Bars" type="VBoxContainer" parent="."]
@@ -45,16 +56,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="Name2" type="MarginContainer" parent="Bars/TopBar"]
+[node name="NameName" type="MarginContainer" parent="Bars/TopBar"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Name2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/NameName"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name2"]
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/NameName"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="Bars/TopBar/Name2/CenterContainer"]
+[node name="Name" type="Label" parent="Bars/TopBar/NameName/CenterContainer"]
 layout_mode = 2
 text = "Name:"
 
@@ -141,16 +152,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Terrain2" type="MarginContainer" parent="Bars/TopBar2"]
+[node name="TerrainName" type="MarginContainer" parent="Bars/TopBar2"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/Terrain2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar2/TerrainName"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/Terrain2"]
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar2/TerrainName"]
 layout_mode = 2
 
-[node name="Terrain" type="Label" parent="Bars/TopBar2/Terrain2/CenterContainer"]
+[node name="Terrain" type="Label" parent="Bars/TopBar2/TerrainName/CenterContainer"]
 layout_mode = 2
 text = "Terrain:"
 
@@ -188,16 +199,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="Region2" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="RegionName" type="MarginContainer" parent="Bars/BottomBar"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/Region2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/RegionName"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Region2"]
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/RegionName"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="Bars/BottomBar/Region2/CenterContainer"]
+[node name="Name" type="Label" parent="Bars/BottomBar/RegionName/CenterContainer"]
 layout_mode = 2
 text = "Region:"
 
@@ -240,16 +251,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="MainBreed2" type="MarginContainer" parent="Bars/BottomBar2"]
+[node name="MainBreedName" type="MarginContainer" parent="Bars/BottomBar2"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/MainBreed2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/MainBreedName"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/MainBreed2"]
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/MainBreedName"]
 layout_mode = 2
 
-[node name="MainBreed" type="Label" parent="Bars/BottomBar2/MainBreed2/CenterContainer"]
+[node name="MainBreed" type="Label" parent="Bars/BottomBar2/MainBreedName/CenterContainer"]
 layout_mode = 2
 text = "Main:"
 
@@ -269,16 +280,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SubBreed2" type="MarginContainer" parent="Bars/BottomBar2"]
+[node name="SubBreedName" type="MarginContainer" parent="Bars/BottomBar2"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/SubBreed2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar2/SubBreedName"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/SubBreed2"]
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar2/SubBreedName"]
 layout_mode = 2
 
-[node name="SubBreed" type="Label" parent="Bars/BottomBar2/SubBreed2/CenterContainer"]
+[node name="SubBreed" type="Label" parent="Bars/BottomBar2/SubBreedName/CenterContainer"]
 layout_mode = 2
 text = "Sub:"
 
