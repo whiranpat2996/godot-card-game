@@ -39,9 +39,7 @@ func drawCard():
 		var new_skill = skill.instantiate()
 		CardSelected = randi() % CardSelect
 		new_skill.CardName = hand.CardList[CardSelected]
-		new_skill.loadCard()
 		$CardSetup/PlayerCards.add_child(new_skill)
-		hand.CardList.pop_front()
 		DeckSize -= 1
 		$PlayerDeck/DeckSize.text = str(DeckSize)
 		return DeckSize

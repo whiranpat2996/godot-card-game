@@ -51,7 +51,9 @@ func _process(_delta):
 	pass
 
 func _on_mouse_entered():
+	print("entered")
 	enlargeCard()
 
 func _on_mouse_exited():
+	print("exited")
 	shrinkCard()

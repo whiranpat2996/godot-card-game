@@ -9,6 +9,7 @@ line_spacing = 0.0
 font_color = Color(0, 0, 0, 1)
 
 [node name="SkillCard" type="MarginContainer"]
+custom_minimum_size = Vector2(130, 175)
 offset_right = 130.0
 offset_bottom = 175.0
 pivot_offset = Vector2(125, 175)
